@@ -1,0 +1,171 @@
+.payment-page {
+    .ant-card {
+        margin-bottom: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+
+        &:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease;
+        }
+    }
+
+    .ant-card-head {
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #e8e8e8;
+        
+        .anticon {
+            font-size: 18px;
+            color: #1890ff;
+            margin-right: 8px;
+        }
+    }
+
+    .ant-card-head-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .ant-table-thead > tr > th {
+        background-color: #f7f7f7;
+        font-weight: 600;
+    }
+
+    .ant-table-tbody > tr:hover > td {
+        background-color: #f0f7ff;
+    }
+
+    .ant-tag {
+        font-weight: 500;
+        min-width: 80px;
+        text-align: center;
+        padding: 2px 8px;
+        border-radius: 4px;
+    }
+
+    .ant-table-row:hover {
+        cursor: pointer;
+    }
+
+    .ant-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .anticon {
+            font-size: 14px;
+            margin-right: 4px;
+        }
+        
+        &.ant-btn-sm {
+            .anticon {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .ant-btn-primary {
+        background-color: #1890ff;
+        border-color: #1890ff;
+        
+        &:hover {
+            background-color: #40a9ff;
+            border-color: #40a9ff;
+        }
+    }
+
+    .ant-btn-danger {
+        color: #ff4d4f;
+        border-color: #ff4d4f;
+        &:hover {
+            color: #fff;
+            background-color: #ff4d4f;
+        }
+    }
+    
+    // Modal styles
+    .ant-modal-header {
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #e8e8e8;
+        border-radius: 8px 8px 0 0;
+        
+        .ant-modal-title {
+            font-weight: 600;
+            color: #333;
+        }
+    }
+    
+    .ant-modal-content {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .ant-modal-footer {
+        border-top: 1px solid #e8e8e8;
+        padding: 12px 24px;
+    }
+    
+    // Descriptions styles
+    .ant-descriptions-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: #333;
+        
+        &::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: #1890ff;
+            margin-top: 8px;
+        }
+    }
+    
+    .ant-descriptions-item-label {
+        font-weight: 500;
+        color: #666;
+    }
+    
+    // Table summary row
+    .ant-table-summary {
+        .ant-table-cell {
+            background-color: #f7f7f7;
+            
+            strong {
+                color: #1890ff;
+            }
+        }
+    }
+    
+    // Divider styles
+    .ant-divider {
+        margin: 24px 0;
+    }
+    
+    // Forms in modals
+    .ant-form-item-label > label {
+        font-weight: 500;
+        color: #333;
+    }
+    
+    // Add animation to notification tags
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    
+    .ant-tag-success {
+        animation: pulse 2s infinite;
+        animation-delay: 0.5s;
+    }
+} 

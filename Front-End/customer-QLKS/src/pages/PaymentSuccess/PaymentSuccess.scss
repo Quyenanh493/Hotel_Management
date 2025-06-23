@@ -1,0 +1,91 @@
+.payment-success-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 15px;
+  
+  .payment-result-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    .ant-result {
+      padding: 24px 0;
+      
+      &-icon {
+        margin-bottom: 16px;
+      }
+      
+      &-title {
+        color: #52c41a;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      
+      &-subtitle {
+        margin-top: 8px;
+        font-size: 16px;
+        
+        p {
+          margin: 4px 0;
+        }
+      }
+    }
+  }
+  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    
+    .ant-spin {
+      margin-bottom: 16px;
+    }
+  }
+  
+  .booking-details {
+    padding: 0 16px;
+    
+    .ant-descriptions {
+      margin-top: 16px;
+      
+      &-item-label {
+        font-weight: 500;
+        background-color: #f5f5f5;
+      }
+    }
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+    
+    button {
+      min-width: 120px;
+    }
+  }
+}
+
+/* Styles for print */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  .payment-success-container,
+  .payment-success-container * {
+    visibility: visible;
+  }
+  
+  .payment-success-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  
+  .action-buttons {
+    display: none !important;
+  }
+} 

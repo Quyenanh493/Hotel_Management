@@ -1,0 +1,57 @@
+.payment-failure-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 15px;
+  
+  .payment-result-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    .ant-result {
+      padding: 24px 0;
+      
+      &-icon {
+        margin-bottom: 16px;
+      }
+      
+      &-title {
+        color: #ff4d4f;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      
+      &-subtitle {
+        margin-top: 8px;
+        font-size: 16px;
+        
+        p {
+          margin: 4px 0;
+        }
+      }
+    }
+  }
+  
+  .error-details {
+    padding: 0 16px;
+    
+    ul {
+      margin-top: 8px;
+      padding-left: 20px;
+      
+      li {
+        margin-bottom: 6px;
+      }
+    }
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+    
+    button {
+      min-width: 120px;
+    }
+  }
+} 

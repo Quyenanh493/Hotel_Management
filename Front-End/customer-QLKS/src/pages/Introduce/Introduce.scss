@@ -1,0 +1,454 @@
+@use "sass:color";
+
+// Variables
+$primary-color: #1890ff;
+$secondary-color: #001529;
+$text-color: #333;
+$light-bg: #f5f5f5;
+$border-radius: 8px;
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+$transition-time: 0.3s;
+
+// Mixins
+@mixin section-padding {
+  padding: 60px 0;
+  
+  @media (max-width: 768px) {
+    padding: 40px 0;
+  }
+}
+
+@mixin hover-effect {
+  transition: all $transition-time;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Main Styles
+.introduce-page {
+  font-family: 'Roboto', sans-serif;
+  color: $text-color;
+  background-color: white;
+  
+  // Loading & Error States
+  .introduce-loading, .introduce-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    
+    .ant-spin {
+      margin-bottom: 20px;
+    }
+  }
+  
+  // Banner Section
+  .introduce-banner {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    
+    @media (max-width: 768px) {
+      height: 400px;
+    }
+    
+    .introduce-carousel {
+      height: 100%;
+      
+      .slick-slide {
+        position: relative;
+        height: 600px;
+        
+        @media (max-width: 768px) {
+          height: 400px;
+        }
+      }
+      
+      .carousel-item {
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+        }
+      }
+      
+      .carousel-content {
+        position: absolute;
+        bottom: 100px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: white;
+        padding: 0 20px;
+        
+        @media (max-width: 768px) {
+          bottom: 50px;
+        }
+        
+        h1 {
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 10px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          color: white;
+          
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
+        }
+        
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 20px;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          color: white;
+          
+          @media (max-width: 768px) {
+            font-size: 1rem;
+          }
+        }
+        
+        .hotel-badges {
+          margin-bottom: 15px;
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          
+          .ant-tag {
+            font-size: 1rem;
+            padding: 2px 12px;
+            border-radius: 15px;
+          }
+        }
+        
+        .ant-btn {
+          height: 46px;
+          font-size: 16px;
+          padding: 0 25px;
+          border-radius: 23px;
+          margin-top: 15px;
+          
+          .anticon {
+            margin-left: 8px;
+            transition: transform 0.3s;
+          }
+          
+          &:hover .anticon {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+  
+  // Container
+  .introduce-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    // Section Styles
+    .introduce-section {
+      margin-bottom: 60px;
+      
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        color: $secondary-color;
+        margin-bottom: 15px;
+        
+        @media (max-width: 768px) {
+          font-size: 1.8rem;
+        }
+      }
+      
+      .section-divider {
+        width: 80px;
+        min-width: 80px;
+        margin: 0 auto 40px;
+        border-top: 3px solid $primary-color;
+      }
+    }
+    
+    // Content Box
+    .content-box {
+      padding: 20px 0;
+      
+      h3 {
+        color: $secondary-color;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+      
+      .ant-divider {
+        margin: 15px 0 25px;
+        width: 60px;
+        min-width: 60px;
+        border-top: 2px solid $primary-color;
+      }
+      
+      .introduction-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        color: #555;
+      }
+      
+      .hotel-info {
+        margin-top: 25px;
+        
+        .info-item {
+          display: flex;
+          margin-bottom: 15px;
+          align-items: flex-start;
+          
+          .info-icon {
+            font-size: 18px;
+            color: $primary-color;
+            margin-right: 15px;
+            margin-top: 3px;
+          }
+        }
+      }
+      
+      .nearby-list {
+        margin: 20px 0;
+        max-width: 500px;
+        
+        .ant-list-item {
+          padding: 10px 16px;
+        }
+      }
+      
+      .history-timeline {
+        margin-top: 30px;
+        
+        .ant-timeline-item {
+          padding-bottom: 25px;
+          
+          &-label {
+            width: 80px;
+            text-align: right;
+            font-weight: bold;
+          }
+          
+          &-content {
+            margin-left: 25px;
+          }
+        }
+      }
+    }
+    
+    // Image Container
+    .image-container {
+      overflow: hidden;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+      height: 100%;
+      min-height: 300px;
+      position: relative;
+      background-color: #f5f5f5;
+      
+      @media (max-width: 768px) {
+        min-height: 250px;
+      }
+      
+      .ant-image {
+        width: 100%;
+        height: 100%;
+        display: block;
+        
+        .ant-image-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+          border-radius: $border-radius;
+          
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+      
+      .featured-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        border-radius: $border-radius;
+        display: block;
+        cursor: pointer;
+        
+        &:hover {
+          transform: scale(1.05);
+        }
+        
+        // Fallback for broken images
+        &[src=""], &:not([src]) {
+          background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          &::before {
+            content: "Không có ảnh";
+            color: #999;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    
+    // Map container styling
+    .map-container {
+      margin-top: 20px;
+      border-radius: $border-radius;
+      overflow: hidden;
+      box-shadow: $box-shadow;
+      
+      iframe {
+        border: 0;
+        border-radius: $border-radius;
+        width: 100%;
+        height: 300px;
+        
+        @media (max-width: 768px) {
+          height: 250px;
+        }
+      }
+    }
+    
+    // Amenity Cards
+    .amenity-card {
+      @include hover-effect;
+      border-radius: $border-radius;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      
+      .amenity-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      
+      .amenity-content {
+        h4 {
+          font-size: 1.2rem;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+        
+        p {
+          color: #555;
+          text-align: center;
+        }
+      }
+    }
+    
+    // Stats Section
+    .stats-section {
+      background-color: $light-bg;
+      padding: 30px;
+      border-radius: $border-radius;
+      margin: 60px 0;
+      
+      .stat-card {
+        @include hover-effect;
+        text-align: center;
+        border-radius: $border-radius;
+        overflow: hidden;
+        height: 100%;
+        
+        .ant-statistic {
+          padding: 15px 0;
+          
+          &-title {
+            font-size: 1rem;
+            margin-bottom: 15px;
+          }
+          
+          &-content {
+            font-size: 1.8rem;
+            color: $primary-color;
+            
+            &-value {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+    
+    // CTA Section
+    .introduce-cta {
+      background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+      padding: 60px 40px;
+      border-radius: $border-radius;
+      text-align: center;
+      margin-bottom: 60px;
+      
+      .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+        
+        h2 {
+          color: white;
+          font-size: 2rem;
+          margin-bottom: 20px;
+        }
+        
+        p {
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 1.1rem;
+          margin-bottom: 30px;
+        }
+        
+        .ant-btn {
+          background-color: white;
+          color: $primary-color;
+          height: 46px;
+          font-size: 16px;
+          padding: 0 30px;
+          border-radius: 23px;
+          border: none;
+          
+          &:hover {
+            background-color: #f0f0f0;
+            color: color.adjust($primary-color, $lightness: -10%);
+          }
+          
+          .anticon {
+            margin-left: 8px;
+            transition: transform 0.3s;
+          }
+          
+          &:hover .anticon {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Use Font Awesome Icons
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'); 

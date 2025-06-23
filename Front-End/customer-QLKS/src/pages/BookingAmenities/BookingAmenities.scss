@@ -1,0 +1,237 @@
+.booking-amenities {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  // CSS cho trang thông báo lỗi
+  .ant-result {
+    margin: 80px auto;
+    padding: 48px 32px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    .ant-result-icon {
+      margin-bottom: 24px;
+      
+      .anticon {
+        font-size: 72px;
+        color: #faad14;
+      }
+    }
+    
+    .ant-result-title {
+      color: #333;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    
+    .ant-result-subtitle {
+      font-size: 16px;
+      margin: 16px 0 24px;
+      color: #666;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .ant-result-extra {
+      margin-top: 32px;
+      
+      .ant-btn {
+        height: 44px;
+        font-size: 16px;
+        padding: 0 32px;
+      }
+    }
+  }
+  
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  &__back-btn {
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+  
+  &__title {
+    margin-bottom: 10px !important;
+  }
+  
+  &__selected {
+    margin-bottom: 20px;
+  }
+  
+  &__selected-card {
+    background-color: #f6ffed;
+    border-color: #b7eb8f;
+  }
+  
+  &__selected-header {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  &__cart-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #52c41a;
+  }
+  
+  &__selected-total {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f5222d;
+  }
+  
+  &__list {
+    margin-top: 20px;
+  }
+  
+  &__item {
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    
+    &--selected {
+      border-color: #1890ff;
+      background-color: #e6f7ff;
+      
+      .booking-amenities__item-image {
+        color: #1890ff;
+      }
+    }
+    
+    &--included {
+      border-color: #52c41a;
+      background-color: #f6ffed;
+      cursor: not-allowed;
+      
+      .booking-amenities__item-image {
+        color: #52c41a;
+      }
+    }
+    
+    &:hover:not(&--included) {
+      border-color: #40a9ff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(24, 144, 255, 0.2);
+      
+      .booking-amenities__item-image {
+        color: #40a9ff;
+      }
+    }
+  }
+  
+  &__item-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 180px;
+  }
+  
+  &__item-image {
+    text-align: center;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    
+    // Icon container styling
+    > div {
+      background-color: #f8f9fa;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border: 2px solid #e8e8e8;
+    }
+  }
+  
+  &__item-info {
+    flex: 1;
+    text-align: center;
+  }
+  
+  &__item-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  &__item-price {
+    color: #f5222d;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  &__item-description {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
+  &__item-checkbox {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+  }
+  
+  &__footer {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  &__confirm-btn {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-amenities {
+    padding: 20px 15px;
+    
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    &__back-btn {
+      margin-bottom: 15px;
+    }
+    
+    &__item-content {
+      min-height: 160px;
+    }
+    
+    &__item-image > div {
+      width: 60px;
+      height: 60px;
+      font-size: 24px !important;
+    }
+    
+    &__item-name {
+      font-size: 14px;
+    }
+    
+    &__item-price {
+      font-size: 14px;
+    }
+  }
+}

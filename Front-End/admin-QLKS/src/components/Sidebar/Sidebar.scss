@@ -1,0 +1,52 @@
+.sidebar {
+  height: 100%;
+  border-right: 1px solid #f0f0f0;
+  
+  &-menu {
+    height: 100%;
+    border-right: 0;
+    
+    // Override Ant Design styles
+    :global {
+      .ant-menu-item {
+        margin: 0 !important;
+        border-radius: 0;
+        
+        &:hover {
+          color: #1890ff;
+        }
+        
+        &-selected {
+          background-color: #1890ff !important;
+          color: white !important;
+          
+          a {
+            color: white !important;
+          }
+          
+          &:hover {
+            color: white !important;
+          }
+        }
+      }
+      
+      .ant-menu-title-content {
+        font-size: 14px;
+      }
+      
+      .anticon {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// Custom icon styles for sidebar
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+} 

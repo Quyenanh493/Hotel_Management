@@ -1,0 +1,125 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #213547;
+  background-color: #ffffff;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-weight: 500;
+  color: #1890ff;
+  text-decoration: none;
+  
+  &:hover {
+    color: #40a9ff;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+// Style for Page Title
+.page-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+}
+
+// Table Styles
+.table-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0;
+    }
+    
+    .table-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  
+  &-primary {
+    background-color: #1890ff;
+    color: white;
+    
+    &:hover {
+      background-color: #096dd9;
+    }
+  }
+  
+  &-secondary {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+    color: #374151;
+    
+    &:hover {
+      background-color: #f3f4f6;
+    }
+  }
+}
+
+// Custom styles for Ant Design
+.ant-table-wrapper {
+  width: 100%;
+}
+
+.ant-table {
+  border-radius: 8px;
+  overflow: hidden;
+  
+  .ant-table-thead > tr > th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  .ant-table-tbody > tr:hover > td {
+    background-color: #f3f4f6;
+  }
+} 

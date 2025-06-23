@@ -1,0 +1,48 @@
+.room-review-page {
+  .table-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .ant-descriptions-bordered .ant-descriptions-item-label {
+    width: 150px;
+    font-weight: bold;
+  }
+
+  .comment-ellipsis {
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ant-rate {
+    font-size: 16px;
+  }
+  
+  .ant-descriptions-bordered .ant-descriptions-view {
+    border: 1px solid #f0f0f0;
+  }
+
+  .ant-table-row:hover {
+    cursor: pointer;
+  }
+
+  .ant-card-head-title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .ant-space-align-center {
+    align-items: center;
+  }
+
+  .ant-btn-sm {
+    font-size: 12px;
+  }
+
+  .ant-modal-title {
+    font-weight: 500;
+  }
+} 

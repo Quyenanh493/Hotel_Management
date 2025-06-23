@@ -1,0 +1,127 @@
+@use "sass:color";
+
+// Variables
+$primary-color: #1890ff;
+$danger-color: #f5222d;
+$success-color: #52c41a;
+$secondary-color: #001529;
+$text-color: #333;
+$light-bg: #f5f5f5;
+$border-radius: 8px;
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+.history-room {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+  
+  .booking-card {
+    height: 100%;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+    
+    .ant-card-body {
+      padding: 20px;
+    }
+    
+    h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .price {
+      font-size: 18px;
+      font-weight: 600;
+      color: $primary-color;
+      margin-bottom: 20px;
+    }
+    
+    .booking-details {
+      margin-bottom: 20px;
+      
+      .detail-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        
+        .label {
+          color: #666;
+          font-weight: 500;
+        }
+        
+        .value {
+          text-align: right;
+          font-weight: 400;
+          
+          &.bold {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    
+    .booking-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+      
+      .pay-btn, .paid-btn {
+        flex: 1;
+        margin-right: 10px;
+      }
+      
+      .paid-btn {
+        background-color: $success-color;
+        border-color: $success-color;
+        
+        &:hover, &:focus {
+          background-color: color.adjust($success-color, $lightness: 10%);
+          border-color: color.adjust($success-color, $lightness: 10%);
+        }
+      }
+      
+      .cancel-btn {
+        flex: 1;
+      }
+    }
+  }
+  
+  // Responsive styles
+  @media (max-width: 768px) {
+    padding: 16px;
+    
+    .booking-card {
+      .price {
+        font-size: 16px;
+      }
+      
+      .booking-actions {
+        flex-direction: column;
+        
+        button {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+} 

@@ -1,0 +1,225 @@
+@use "sass:color";
+
+// Variables
+$primary-color: #1890ff;
+$secondary-color: #001529;
+$text-color: #333;
+$light-bg: #f5f5f5;
+$header-height: 64px;
+$border-radius: 4px;
+$box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+$transition-time: 0.3s;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin button-style {
+  height: 36px;
+  border-radius: $border-radius;
+  font-weight: 500;
+  transition: all $transition-time;
+}
+
+// Layout Styles
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  &__header {
+    @include flex-center;
+    justify-content: flex-start;
+    padding: 0 30px;
+    background-color: white;
+    box-shadow: $box-shadow;
+    height: $header-height;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  &__logo {
+    margin-right: 40px;
+    cursor: pointer;
+    transition: transform $transition-time;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  &__hotel-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: $primary-color;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+  }
+  
+  &__nav {
+    @include flex-center;
+    justify-content: space-between;
+    flex: 1;
+  }
+  
+  &__menu {
+    border-bottom: none;
+    
+    .ant-menu-item {
+      font-size: 15px;
+      font-weight: 500;
+      
+      &:hover {
+        color: $primary-color;
+      }
+      
+      &.ant-menu-item-selected {
+        color: $primary-color;
+        font-weight: 600;
+        
+        &::after {
+          border-bottom: 2px solid $primary-color;
+        }
+      }
+    }
+  }
+  
+  &__auth {
+    @include flex-center;
+    gap: 12px;
+  }
+  
+  &__login-btn {
+    @include button-style;
+    color: $primary-color;
+    border-color: $primary-color;
+    
+    &:hover {
+      color: white;
+      background-color: $primary-color;
+    }
+  }
+  
+  &__register-btn {
+    @include button-style;
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: white;
+    
+    &:hover {
+      background-color: color.adjust($primary-color, $lightness: -10%);
+    }
+  }
+  
+  &__content {
+    padding: 30px 50px;
+    background-color: $light-bg;
+    flex: 1;
+  }
+  
+  &__footer {
+    text-align: center;
+    padding: 20px;
+    background-color: $secondary-color;
+    color: white;
+    font-size: 14px;
+  }
+  
+  // Responsive styles
+  @media (max-width: 992px) {
+    &__header {
+      padding: 0 20px;
+    }
+    
+    &__content {
+      padding: 20px 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    &__header {
+      padding: 0 15px;
+      flex-direction: column;
+      height: auto;
+      padding: 10px 15px;
+    }
+    
+    &__logo {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    
+    &__nav {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    &__menu {
+      margin-bottom: 10px;
+      width: 100%;
+      justify-content: center;
+    }
+    
+    &__auth {
+      margin-top: 10px;
+      justify-content: center;
+    }
+    
+    &__content {
+      padding: 15px 20px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    &__menu {
+      .ant-menu-item {
+        padding: 0 10px;
+        margin: 0 2px;
+        font-size: 14px;
+      }
+    }
+    
+    &__auth {
+      flex-direction: column;
+      gap: 8px;
+      
+      button {
+        width: 100%;
+      }
+    }
+    
+    &__content {
+      padding: 10px 15px;
+    }
+  }
+}
+
+// User dropdown styles
+.user-dropdown {
+  @include flex-center;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: $border-radius;
+  transition: background-color $transition-time;
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .ant-avatar {
+    background-color: $primary-color;
+  }
+
+  .username {
+    margin-left: 8px;
+    font-weight: 500;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,254 @@
+@use "sass:color";
+
+// Variables
+$primary-color: #1890ff;
+$secondary-color: #001529;
+$text-color: #333;
+$light-bg: #f5f5f5;
+$border-radius: 8px;
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+$transition-time: 0.3s;
+
+.contact-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: $primary-color;
+    margin: 20px auto;
+  }
+}
+
+.contact-title {
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  color: $secondary-color;
+  margin-bottom: 15px !important;
+}
+
+.contact-subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+.contact-content {
+  margin-top: 30px;
+}
+
+.contact-map {
+  position: relative;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+  
+  iframe {
+    display: block;
+    border-radius: $border-radius;
+  }
+}
+
+.contact-info-card {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 10;
+  
+  .ant-card-body {
+    padding: 20px;
+  }
+}
+
+.contact-details {
+  margin-top: 30px;
+}
+
+.contact-details-card {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  
+  .ant-card-body {
+    padding: 25px;
+  }
+  
+  h3 {
+    color: $secondary-color;
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+  
+  .ant-divider {
+    margin: 20px 0;
+  }
+}
+
+.contact-info {
+  h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: $secondary-color;
+    font-weight: 600;
+  }
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  
+  .anticon {
+    font-size: 18px;
+    color: $primary-color;
+    margin-right: 10px;
+    margin-top: 3px;
+  }
+  
+  span {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+.contact-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $light-bg;
+    color: $primary-color;
+    font-size: 20px;
+    transition: all $transition-time;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.contact-form-card {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  height: 100%;
+  
+  .ant-card-body {
+    padding: 30px;
+  }
+  
+  h2 {
+    color: $secondary-color;
+    margin-bottom: 24px;
+    font-weight: 600;
+    text-align: center;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: $primary-color;
+      margin: 15px auto 0;
+    }
+  }
+}
+
+.contact-form {
+  .ant-form-item-label {
+    label {
+      font-weight: 500;
+      color: $secondary-color;
+    }
+  }
+  
+  .ant-input, .ant-input-affix-wrapper {
+    border-radius: 4px;
+    padding: 10px 12px;
+    border: 1px solid #d9d9d9;
+    
+    &:hover, &:focus {
+      border-color: $primary-color;
+    }
+  }
+  
+  textarea.ant-input {
+    min-height: 120px;
+    resize: vertical;
+  }
+}
+
+.contact-submit-btn {
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  
+  .anticon {
+    margin-right: 8px;
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 30px 15px;
+  }
+  
+  .contact-title {
+    font-size: 28px !important;
+  }
+  
+  .contact-subtitle {
+    font-size: 16px;
+  }
+  
+  .contact-map {
+    iframe {
+      height: 350px;
+    }
+  }
+  
+  .contact-info-card {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    margin-top: -20px;
+    z-index: 5;
+  }
+  
+  .contact-content {
+    margin-top: 15px;
+  }
+  
+  .contact-form-card {
+    margin-top: 24px;
+  }
+  
+  .contact-details {
+    margin-top: 24px;
+  }
+} 

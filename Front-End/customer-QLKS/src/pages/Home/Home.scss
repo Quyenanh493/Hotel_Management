@@ -1,0 +1,844 @@
+.home {
+  // Slider Section Styles
+  &__slider {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
+    position: relative;
+    overflow: hidden;
+
+    &-main {
+      width: 100%;
+      height: auto;
+    }
+
+    &-item {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        display: block;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+
+    &-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      text-align: center;
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  // Search Form Styles
+  &__hero {
+    width: 100%;
+    max-width: 1000px; /* 80% của 1200px */
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__search {
+    &-container {
+      max-width: 100%;
+      width: 100%;
+      margin: -50px auto 0;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 20;
+    }
+
+    &-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    &-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    &-btn {
+      background-color: #1890ff;
+      border-color: #1890ff;
+      padding: 0 25px;
+
+      &:hover {
+        background-color: #40a9ff;
+        border-color: #40a9ff;
+      }
+    }
+  }
+
+  &__date-picker {
+    min-width: 200px;
+  }
+
+  // Fix for Ant Design row
+  .ant-row.css-dev-only-do-not-override-1d4w9r2 {
+    width: 100%;
+  }
+
+  // room styles
+  &__featured {
+    margin: 60px 0;
+    
+    &-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #1890ff;
+      }
+    }
+  }
+  
+  &__room {
+    &-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+    }
+    
+    &-image {
+      height: 220px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+    
+    &-info {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    &-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    
+    &-price {
+      font-size: 16px;
+      color: #1890ff;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    
+    &-features, &-facilities {
+      margin-bottom: 15px;
+      
+      h4 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #555;
+      }
+    }
+    
+    &-amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      
+      span {
+        background-color: #f5f5f5;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #666;
+      }
+    }
+    
+    &-btn {
+      margin-top: auto;
+      align-self: flex-start;
+      margin-top: 15px;
+    }
+  }
+
+  // utilities
+  &__amenities {
+    margin: 60px 0;
+    
+    &-container {
+      text-align: center;
+      padding: 20px 0;
+    }
+  }
+
+  &__section-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    
+    &:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: #1890ff;
+      margin: 10px auto 0;
+    }
+  }
+
+  &__amenity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    height: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+  }
+
+  &__amenity-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f0f7ff;
+    color: #1890ff;
+    
+    i {
+      font-size: 28px;
+    }
+  }
+
+  &__amenity-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+
+  &__amenities-more {
+    margin-top: 30px;
+    
+    button {
+      font-size: 14px;
+      font-weight: 500;
+      
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Contact Us Styles
+  // Add this to your existing Home.scss file
+
+// Contact section
+.home__contact {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  background-color: transparent;
+
+  &-container {
+    width: 100%;
+  }
+
+  &-map {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+    }
+  }
+
+  &-info {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+
+  &-phone {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    
+    i {
+      font-size: 18px;
+      margin-right: 10px;
+      color: #1890ff;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    a {
+      color: #333;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      
+      &:hover {
+        color: #1890ff;
+      }
+    }
+  }
+
+  &-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+
+    &-title {
+      margin-top: 20px;
+    }
+    
+    &-item {
+      display: flex;
+      align-items: center;
+      color: #333;
+      text-decoration: none;
+      margin-right: 20px;
+      
+      i {
+        font-size: 18px;
+        margin-right: 8px;
+        color: #1890ff;
+      }
+      
+      span {
+        font-size: 16px;
+      }
+      
+      &:hover {
+        color: #1890ff;
+      }
+
+    }
+  }
+}
+
+// Section title styling (can be used for all section titles)
+.home__section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #1890ff;
+  }
+}
+
+&__guest {
+  &-selector {
+    position: relative;
+    width: 100%;
+  }
+
+  &-display {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 4px 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+    background-color: #f5f5f5;
+
+    &:hover {
+      border-color: #40a9ff;
+    }
+  }
+
+  &-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    padding: 12px;
+    margin-top: 4px;
+    border: 1px solid #f0f0f0;
+  }
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-label {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  &-controls {
+    display: flex;
+    align-items: center;
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    
+    &:disabled {
+      color: rgba(0, 0, 0, 0.25);
+      background-color: #f5f5f5;
+      border-color: #d9d9d9;
+      cursor: not-allowed;
+    }
+  }
+
+  &-count {
+    margin: 0 12px;
+    min-width: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+  
+  // Responsive styles for rooms
+  @media (max-width: 768px) {
+    &__featured {
+      margin: 40px 0;
+      
+      &-title {
+        font-size: 28px;
+      }
+    }
+    
+    &__room {
+      &-card {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  // Responsive Styles
+  @media (max-width: 768px) {
+    &__slider-item {
+      height: 350px;
+    }
+    
+    &__search-container {
+      margin-top: -30px;
+      width: 95%;
+    }
+    
+    &__search-form {
+      flex-direction: column;
+      align-items: stretch;
+
+      .ant-form-item {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Phần hiển thị phòng nổi bật
+.home__featured-rooms-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.home__featured {
+  &-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: #1890ff;
+    }
+  }
+  
+  &-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+}
+
+.home__room {
+  &-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  &-image {
+    height: 200px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  &-header {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+  
+  &-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  &-price {
+    font-size: 16px;
+    color: #ff4d4f;
+    font-weight: 600;
+  }
+  
+  &-section {
+    margin-bottom: 12px;
+    
+    &-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 8px;
+    }
+  }
+  
+  &-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  
+  &-tag {
+    font-size: 12px;
+    padding: 2px 8px;
+    margin-right: 0;
+  }
+  
+  &-capacity {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  &-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    gap: 10px;
+  }
+  
+  &-btn {
+    flex: 1;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 14px;
+    
+    &-detail {
+      color: #1890ff;
+      border-color: #1890ff;
+      
+      &:hover {
+        color: #40a9ff;
+        border-color: #40a9ff;
+      }
+    }
+  }
+}
+
+.home__view-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  
+  
+  &-btn {
+    padding: 0 30px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    background: #1890ff;
+    
+    &:hover {
+      color: #fff;
+      background: #40a9ff;
+    }
+  }
+}
+
+// Phần liên hệ
+.home__contact-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.home__section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #1890ff;
+  }
+}
+
+.home__map {
+  height: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.home__contact {
+  &-info {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  &-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  &-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    
+    i {
+      font-size: 20px;
+      color: #1890ff;
+      margin-right: 15px;
+      width: 30px;
+      text-align: center;
+    }
+    
+    a {
+      font-size: 18px;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s;
+      
+      &:hover {
+        color: #1890ff;
+      }
+    }
+  }
+  
+  &-social {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.home__social-link {
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s;
+  
+  i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #1890ff;
+  }
+  
+  &:hover {
+    color: #1890ff;
+  }
+}
+
+// Thêm import cho Font Awesome nếu chưa có
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+// Phần loading và no-rooms
+.home__loading, .home__no-rooms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+  
+  .ant-spin {
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #666;
+  }
+}
